@@ -1,0 +1,9 @@
+.all{background-color: #509673;height: 100vw;width: 100vw}
+.ant-menu-horizontal{background-color:#78b27b }
+.ant-menu-horizontal > .ant-menu-item-selected{color: white}
+.ant-card-body{padding: 20px;}
+.ant-card-meta-description{font-size: 20px;color:#41c074}
+.ant-input{width: 100px;}
+.anticon-bank{width: 100px;color: #41c074;}
+/* .ant-dropdown {width: 40px;} */
+.ant-checkbox-group-item{margin-left: 100px;}

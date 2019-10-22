@@ -1,0 +1,18 @@
+/* .ant-card{ position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-260%, -50%);
+} */
+.ant-card-head{background-color: #f9b531;color: #fff;font-size: 24px}
+.ant-drawer-title{font-size: 24px;color: gray}
+.ant-drawer-content-wrapper{width: 360px!important}
+.ant-card-meta-description{
+    font-size: 30px;
+    text-align: center;
+    color: #fff
+}
+.anticon-minus{color: red}
+.anticon-plus{color: green}
+.daysBox{display: flex;flex-direction: row}
+.ant-breadcrumb-link{margin-left: 8px;font-size: 14.5px}
+.ant-card-meta-title{font-size: 20px;font-weight: bold;}
