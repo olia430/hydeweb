@@ -2,7 +2,7 @@ import React from "react"
 import SelectBox from "../../component/selectBox/selectBox"
 import MapIndex from "../../component/leaflet/leafletmap"
 
-const google = window.google;
+// const google = window.google;
 
 class LocationSelection extends React.PureComponent {
   state = {

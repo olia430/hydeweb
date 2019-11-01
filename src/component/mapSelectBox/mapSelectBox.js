@@ -1,7 +1,7 @@
 import React from "react"
 import { compose, withProps } from "recompose"
 import { Card,Dropdown,Icon,Checkbox } from 'antd';
-import { withScriptjs, withGoogleMap, GoogleMap, Marker,Polyline,lineSymbol} from "react-google-maps"
+import { withScriptjs, withGoogleMap, GoogleMap, Marker,Polyline} from "react-google-maps"
 
 const MyMapComponent = compose(
   withProps({

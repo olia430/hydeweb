@@ -1,21 +1,21 @@
 import React from 'react'
-import { Menu, Icon, Card, List,Input,Dropdown,Tabs,Checkbox  } from 'antd';
-import { compose, withProps } from "recompose"
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+import { Menu, Icon, Card, Input,Dropdown,Tabs,Checkbox  } from 'antd';
+// import { compose, withProps } from "recompose"
+// import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 import MapSelectBox from "../../component/mapSelectBox/mapSelectBox"
 import './detail.css'
 import icon from '../../images/view.png'
 import icon1 from '../../images/hotel.png'
 import icon2 from '../../images/w1080.jpg'
-import { duration } from 'moment';
+// import { duration } from 'moment';
 
 const { Meta } = Card;
-const { Search } = Input;
+// const { Search } = Input;
 const { TabPane } = Tabs;
-const gridStyle = {
-    width: '33%',
-    textAlign: 'center',
-  };
+// const gridStyle = {
+//     width: '33%',
+//     textAlign: 'center',
+//   };
 const gridStyle1 = {
   width: '100%',
   textAlign: 'center',
@@ -25,23 +25,23 @@ const checkboxStyle = {
   textAlign: 'center',
 }
 
-const MyMapComponent = compose(
-    withProps({
-      googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyADXRPfT4-ecgGNiq6mNJ0GuU7HjguF4MA&v=3.exp&libraries=geometry,drawing,places",
-      loadingElement: <div style={{ height: `100%`,position: `absolute`,left:`50%`,top:`50%`,transform: `translate(-50%, -10%)`,fontSize:'30px'}}>加载中...</div>,
-      containerElement: <div style={{ height: `900px` }} />,
-      mapElement: <div style={{ height: `100%` }} />,
-    }),
-    withScriptjs,
-    withGoogleMap
-  )((props) =>
-    <GoogleMap
-      defaultZoom={8}
-      defaultCenter={{ lat: -34.397, lng: 150.644 }}
-    >
-      {props.isMarkerShown && <Marker position={{ lat: -34.397, lng: 150.644 }} onClick={props.onMarkerClick} />}
-    </GoogleMap>
-  )
+// const MyMapComponent = compose(
+//     withProps({
+//       googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyADXRPfT4-ecgGNiq6mNJ0GuU7HjguF4MA&v=3.exp&libraries=geometry,drawing,places",
+//       loadingElement: <div style={{ height: `100%`,position: `absolute`,left:`50%`,top:`50%`,transform: `translate(-50%, -10%)`,fontSize:'30px'}}>加载中...</div>,
+//       containerElement: <div style={{ height: `900px` }} />,
+//       mapElement: <div style={{ height: `100%` }} />,
+//     }),
+//     withScriptjs,
+//     withGoogleMap
+//   )((props) =>
+//     <GoogleMap
+//       defaultZoom={8}
+//       defaultCenter={{ lat: -34.397, lng: 150.644 }}
+//     >
+//       {props.isMarkerShown && <Marker position={{ lat: -34.397, lng: 150.644 }} onClick={props.onMarkerClick} />}
+//     </GoogleMap>
+//   )
 
   
 
@@ -88,42 +88,42 @@ class Detail extends React.Component{
             <div>
                 <Checkbox.Group options={plainOptions} style={checkboxStyle} defaultValue={['景点']}/>
                 <div style={{height:'400px',overflowY:'scroll'}}>
-                    <Card>
-                        <Card.Grid style={gridStyle}>
-                            <img src={icon2} style={{width:'200px'}}/>
-                            <p>颐和园</p>
-                            <Meta description="+添加到行程" style={{cursor:'pointer'}}/>
-                        </Card.Grid>
-                        <Card.Grid hoverable={false} style={gridStyle}>
-                            <img src={icon2} style={{width:'200px'}}/>
-                            <p>颐和园</p>
-                            <Meta description="+添加到行程" style={{cursor:'pointer'}}/>
-                        </Card.Grid>
-                        <Card.Grid style={gridStyle}>
-                            <img src={icon2} style={{width:'200px'}}/>
-                            <p>颐和园</p>
-                            <Meta description="+添加到行程" style={{cursor:'pointer'}}/>
-                        </Card.Grid>
-                        <Card.Grid style={gridStyle}>
-                            <img src={icon2} style={{width:'200px'}}/>
-                            <p>颐和园</p>
-                            <Meta description="+添加到行程" style={{cursor:'pointer'}}/>
-                        </Card.Grid>
-                        <Card.Grid style={gridStyle}>
-                            <img src={icon2} style={{width:'200px'}}/>
-                            <p>颐和园</p>
-                            <Meta description="+添加到行程" style={{cursor:'pointer'}}/>
-                        </Card.Grid>
-                        <Card.Grid style={gridStyle}>
-                            <img src={icon2} style={{width:'200px'}}/>
-                            <p>颐和园</p>
-                            <Meta description="+添加到行程" style={{cursor:'pointer'}}/>
-                        </Card.Grid>
-                        <Card.Grid style={gridStyle}>
-                            <img src={icon2} style={{width:'200px'}}/>
-                            <p>颐和园</p>
-                            <Meta description="+添加到行程" style={{cursor:'pointer'}}/>
-                        </Card.Grid>
+                    <Card> 
+                        {
+                        [
+                          {
+                            src: {icon2},
+                            description: '添加到行程'
+                          },
+                          {
+                            src: {icon2},
+                            description: '添加到行程'
+                          },
+                          {
+                            src: {icon2},
+                            description: '添加到行程'
+                          },
+                          {
+                            src: {icon2},
+                            description: '添加到行程'
+                          },
+                          {
+                            src: {icon2},
+                            description: '添加到行程'
+                          },
+                          {
+                            src: {icon2},
+                            value: 'africa'
+                          },
+                          {
+                            src: {icon2},
+                            description: '添加到行程'
+                          }
+                        ].map((d, i)=> <Card.Grid key={i}><img src={icon2} style={{width:'200px'}}/>
+                        <p>颐和园</p>
+                        <Meta description="+添加到行程" style={{cursor:'pointer'}}/>
+                        </Card.Grid>)
+                      }
                     </Card>
                 </div>
             </div>
@@ -227,11 +227,25 @@ class Detail extends React.Component{
         return(
             <div>
                  <Card style={{ width: 80,marginTop:'30px',marginLeft:'40px' }}>
-                    <div style={{marginTop:'14px',width:'50px',height:'50px',borderRadius:'50px',backgroundColor:'#41c074'}}><p style={{color:'white',fontSize:'24px',textAlign:'center',lineHeight:'50px'}}>D1</p></div>
-                    <div style={{marginTop:'14px',width:'50px',height:'50px',borderRadius:'50px',backgroundColor:'#41c074'}}><p style={{color:'white',fontSize:'24px',textAlign:'center',lineHeight:'50px'}}>D2</p></div>
-                    <div style={{marginTop:'14px',width:'50px',height:'50px',borderRadius:'50px',backgroundColor:'#41c074'}}><p style={{color:'white',fontSize:'24px',textAlign:'center',lineHeight:'50px'}}>D3</p></div>
-                    <div style={{marginTop:'14px',width:'50px',height:'50px',borderRadius:'50px',backgroundColor:'#41c074'}}><p style={{color:'white',fontSize:'24px',textAlign:'center',lineHeight:'50px'}}>D4</p></div>
-                    <div style={{marginTop:'14px',width:'50px',height:'50px',borderRadius:'50px',backgroundColor:'#41c074'}}><p style={{color:'white',fontSize:'24px',textAlign:'center',lineHeight:'50px'}}>D5</p></div>
+                    {
+                        [
+                          {
+                            text:'D1'
+                          },
+                          {
+                            text:'D2'
+                          },
+                          {
+                            text:'D3'
+                          },
+                          {
+                            text:'D4'
+                          },
+                          {
+                            text:'D5'
+                          }
+                        ].map((d,i)=><div key={i} style={{marginTop:'14px',width:'50px',height:'50px',borderRadius:'50px',backgroundColor:'#41c074'}}><p style={{color:'white',fontSize:'24px',textAlign:'center',lineHeight:'50px'}}>{d.text}</p></div>)
+                      }                
                 </Card>
                 <Card
                     style={{ width: 240,marginTop:'-360px',marginLeft:'150px' }}
@@ -270,12 +284,12 @@ class Detail extends React.Component{
           <div className='all'>
               <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal">
                 <Menu.Item key="unordered-list">
-                <Icon type="unordered-list" />
-                标准模式
-                </Menu.Item>
+                  <Icon type="unordered-list" />
+                    标准模式
+                  </Menu.Item>
                 <Menu.Item key="environment">
-                <Icon type="environment" />
-                地图模式
+                  <Icon type="environment" />
+                    地图模式
                 </Menu.Item>
               </Menu>
               {
